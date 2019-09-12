@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="alert alert-succes alert-dismissible fade show" role="alert">
+    <strong>Hii there!</strong> Follow me on github.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="container">
+
+
+    <h1>Welcome to the Word Formatter. Enter your text below</h1>
+    <form action='result' method='POST'>
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="mytextarea">Enter your text here and let Text Utils do the magic</label>
+            <textarea class="form-control" name='text' id="mytextarea" rows="9"></textarea>
+        </div>
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+            <label class="custom-control-label" for="customSwitch1">lowercase</label>
+        </div>
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="customSwitch2">
+            <label class="custom-control-label" for="customSwitch2">UPPERCASE</label>
+        </div>
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="customSwitch3">
+            <label class="custom-control-label" for="customSwitch3">Remove Punctuations</label>
+        </div>
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="customSwitch4">
+            <label class="custom-control-label" for="customSwitch4">Remove Newline</label>
+        </div>
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="customSwitch5">
+            <label class="custom-control-label" for="customSwitch5">Trim Extra Spaces</label>
+        </div>
+
+        <button type='submit' class="mt-4"> Analyze Text</button>
+    </form>
+</div>
+
+{% endblock %}

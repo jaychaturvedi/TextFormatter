@@ -6,21 +6,21 @@
     </head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <style>
-                #formatica{
-                    border-style: solid;
-                    border-color: red yellow ;
-                    padding: 50px;
-                    margin-top: 25px;
-            
-                }
+    <style>
+        #formatica {
+            border-style: solid;
+            border-color: red yellow;
+            padding: 50px;
+            margin-top: 15px;
 
-                body{
-                    background-color:darkslategray; margin-top: 25px; font-style: italic; margin-top: 0; color: whitesmoke
+        }
 
-
-                }
-            </style>
+        body {
+            background-color: darkslategray;
+            font-style: italic;
+            color: whitesmoke
+        }
+    </style>
 
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -41,8 +41,8 @@
         {% block noti%}
         {% endblock noti%}
 
-       {% block content %}
-       {% endblock content %}
+        {% block content %}
+        {% endblock content %}
 
 
 
@@ -56,5 +56,8 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
         </script>
     </body>
+    {% block foot %}
+    {% endblock foot%}
+
 
 </html>

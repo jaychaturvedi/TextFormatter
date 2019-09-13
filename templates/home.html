@@ -3,14 +3,7 @@
 
 {% if error %}
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <strong>Oops! {{ error }}</strong> 
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
-{% else%}
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-    <strong>Hii there!</strong> Follow me on <a href="https://github.com/jaychaturvedi">github</a>
+    <strong>Oops! {{ error }}</strong>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
@@ -25,7 +18,7 @@
 
 
 
-<div class="container" id ="formatica">
+<div class="container" id="formatica">
 
 
     <h1>Welcome to the Word Formatter. Enter your text below</h1>
@@ -37,7 +30,7 @@
             <textarea class="form-control" name='text' id="mytextarea" rows="9"></textarea>
         </div>
         <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input" id="customSwitch1"  name='lowercase' >
+            <input type="checkbox" class="custom-control-input" id="customSwitch1" name='lowercase'>
             <label class="custom-control-label" for="customSwitch1">lowercase</label>
         </div>
         <div class="custom-control custom-switch">
@@ -62,3 +55,16 @@
 </div>
 
 {% endblock content %}
+
+{% block foot %}
+<footer>
+    <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+        <strong>Hii there!</strong> Follow me on <a href="https://github.com/jaychaturvedi">github</a>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+</footer>
+
+{% endblock foot%}

@@ -6,11 +6,25 @@
     </head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+                #formatica{
+                    border-style: solid;
+                    border-color: red yellow ;
+                    padding: 50px;
+                    margin-top: 25px;
+            
+                }
 
+                body{
+                    background-color:darkslategray; margin-top: 25px; font-style: italic; margin-top: 0; color: whitesmoke
+
+
+                }
+            </style>
 
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="{% url 'home' %}">TextFormatter</a>
+            <a class="navbar-brand" href="{% url 'home' %}">TextFormatter<span class="sr-only">(current)</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
                 aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -18,24 +32,17 @@
 
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Me</a>
+                        <a class="nav-link" href="{% url 'about' %}">About Application</a>
                     </li>
                 </ul>
             </div>
         </nav>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Hii there!</strong> Follow me on github.
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
+        {% block noti%}
+        {% endblock noti%}
 
        {% block content %}
-       {% endblock %}
+       {% endblock content %}
 
 
 

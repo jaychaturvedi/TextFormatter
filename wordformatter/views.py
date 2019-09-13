@@ -1,10 +1,10 @@
 from django.shortcuts import render
 
 def home(request):
+    return render(request, 'home.html')
 
-    rawtext = request.POST.get('text', 'off')
-
-    return render(request, 'home.html',{'data': rawtext})
+def about(request):
+    return render(request, 'about.html')
 
 
 def result(request):
@@ -14,6 +14,9 @@ def result(request):
     removepunc = request.POST.get('removepunc', 'off')
     removeline = request.POST.get('removeline', 'off')
     trim = request.POST.get('trim', 'off')
+
+    if(len(rawtext)==0):
+        return render(request, 'home.html',{'error':'Please enter text to format'})
     
     if(uppercase == 'on'):
         testdata = ''
@@ -42,6 +45,8 @@ def result(request):
         for i in rawtext:
             if (i != '\n' and i!='\r'):
                 testdata+=i
+            else:
+                testdata+=' '
 
         rawtext = testdata
                 
@@ -54,6 +59,8 @@ def result(request):
 
         rawtext = testdata.strip()
 
+    if (uppercase!='on' and lowercase!='on'  and trim!='on'  and removeline!='on'  and removepunc!='on' ):
+        return render(request, 'home.html',{'error':'Please select option to format text'})
         
 
     return render(request, 'result.html',{'data':rawtext})
